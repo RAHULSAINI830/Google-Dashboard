@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Analytics Dashboard with Detailed Data</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Google Analytics Dashboard with Detailed Data</h1>
+
+        <!-- Date picker for the first date range -->
+        <div class="date-picker">
+            <h3>Select First Date Range</h3>
+            <label for="startDate1">Start Date:</label>
+            <input type="date" id="startDate1">
+            <label for="endDate1">End Date:</label>
+            <input type="date" id="endDate1">
+        </div>
+
+        <!-- Date picker for the comparison date range -->
+        <div class="date-picker">
+            <h3>Select Comparison Date Range</h3>
+            <label for="startDate2">Start Date:</label>
+            <input type="date" id="startDate2">
+            <label for="endDate2">End Date:</label>
+            <input type="date" id="endDate2">
+        </div>
+
+        <!-- Filter options for page path -->
+        <div class="filter-section">
+            <h3>Filter By Page Path</h3>
+            <label for="matchType">Match Type:</label>
+            <select id="matchType">
+                <option value="exact">Matches Exactly</option>
+                <option value="contains">Contains</option>
+            </select>
+            <label for="keyword">Keyword:</label>
+            <input type="text" id="keyword" placeholder="Enter page path keyword">
+        </div>
+
+        <button id="fetchData">Fetch Analytics Data</button>
+
+        <!-- Table to display detailed data -->
+        <h2>Comparison Data</h2>
+        <table id="analyticsTable">
+            <thead>
+                <tr>
+                    <th>Browser</th>
+                    <th>Device Category</th>
+                    <th>Page Path</th>
+                    <th>Active Users</th>
+                    <th>Sessions (First Date Range)</th>
+                    <th>Sessions (Comparison Date Range)</th>
+                    <th>Views (First Date Range)</th>
+                    <th>Views per Active User (First Date Range)</th>
+                    <th>Average Engagement Time (First Date Range)</th>
+                    <th>Event Count (First Date Range)</th>
+                    <th>Total Revenue (First Date Range)</th>
+                    <th>Views (Comparison Date Range)</th>
+                    <th>Views per Active User (Comparison Date Range)</th>
+                    <th>Average Engagement Time (Comparison Date Range)</th>
+                    <th>Event Count (Comparison Date Range)</th>
+                    <th>Total Revenue (Comparison Date Range)</th>
+                    <th>Bounce Rate (First Date Range)</th>
+                    <th>Bounce Rate (Comparison Date Range)</th>
+                    <th>New Users (First Date Range)</th>
+                    <th>New Users (Comparison Date Range)</th>
+                    <th>Avg. Session Duration (First Date Range)</th>
+                    <th>Avg. Session Duration (Comparison Date Range)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically populated here -->
+            </tbody>
+        </table>
+
+        <!-- Chart for data visualization -->
+        <canvas id="analyticsChart" width="400" height="200"></canvas>
+
+        <div id="error" class="error"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>
